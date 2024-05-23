@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "830973300628",
+    "project_id": "habit-tracker-login-6f306",
+    "storage_bucket": "habit-tracker-login-6f306.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830973300628:android:467bafec0394fb8faf4981",
+        "android_client_info": {
+          "package_name": "edu.mirea.onebeattrue.habittracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvB_ADcJPoTgjcZG4hLLlA8ahdXfA2z4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
