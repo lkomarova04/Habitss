@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/bottom_home"
-        android:icon="@drawable/baseline_home_24"
-        android:title="Home" />
-
+        android:id="@+id/ifHome"
+        android:title="HOME"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/baseline_home_24"/>
     <item
-        android:id="@+id/bottom_search"
-        android:icon="@drawable/baseline_block_24"
-        android:title="Search" />
-
+        android:id="@+id/iffavorite"
+        app:showAsAction="ifRoom"
+        android:title="Favorite"
+        android:icon="@drawable/baseline_favorite_border_24"/>
     <item
-        android:id="@+id/bottom_settings"
-        android:icon="@drawable/baseline_done_outline_24"
-        android:title="Settings" />
-
-    <item
-        android:id="@+id/bottom_profile"
-        android:icon="@drawable/baseline_favorite_border_24"
-        android:title="Profile" />
+        android:id="@+id/ifUser"
+        app:showAsAction="ifRoom"
+        android:title="USER"
+        android:icon="@drawable/outline_contacts_product_24"/>
 
 
 </menu>

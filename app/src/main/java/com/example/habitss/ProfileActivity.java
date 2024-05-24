@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.habitss.activity.MainActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -30,9 +31,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.example.habitss.activity.MainActivity;
 
 import java.io.IOException;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -42,7 +43,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     TextView profileName, profileEmail, profileUsername, profilePassword;
     TextView titleName, titleUsername;
-    Button editProfile, selectImageBtn, captureImageBtn;
+    Button editProfile, selectImageBtn, captureImageBtn, goToMainButton;
     ImageView profileImg;
     Uri imageUri;
     DatabaseReference databaseReference;
@@ -64,6 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileImg = findViewById(R.id.profileImg);
         selectImageBtn = findViewById(R.id.selectImageBtn);
         captureImageBtn = findViewById(R.id.captureImageBtn);
+        goToMainButton = findViewById(R.id.goToMainButton);  // Новая кнопка
 
         storageReference = FirebaseStorage.getInstance().getReference("profile_images");
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
@@ -77,10 +79,31 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        selectImageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectProfileImage(view);
+            }
+        });
+
+        captureImageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                captureProfileImage(view);
+            }
+        });
+
+        goToMainButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToMainPage();
+            }
+        });
+
         loadProfileImage();
     }
 
-    public void showAllUserData(){
+    public void showAllUserData() {
         Intent intent = getIntent();
         String nameUser = intent.getStringExtra("name");
         String emailUser = intent.getStringExtra("email");
@@ -95,7 +118,7 @@ public class ProfileActivity extends AppCompatActivity {
         profilePassword.setText(passwordUser);
     }
 
-    public void passUserData(){
+    public void passUserData() {
         // Existing code
     }
 
@@ -145,7 +168,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private Uri getImageUri(Bitmap bitmap) {
-        String path =MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
+        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
         return Uri.parse(path);
     }
 
@@ -195,6 +218,10 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    private void goToMainPage() {
+        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

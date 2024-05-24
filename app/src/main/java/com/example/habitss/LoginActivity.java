@@ -105,6 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("name", nameFromDB);
                         intent.putExtra("email", emailFromDB);
                         intent.putExtra("username", usernameFromDB);
+
                         intent.putExtra("password", passwordFromDB);
 
                         startActivity(intent);
