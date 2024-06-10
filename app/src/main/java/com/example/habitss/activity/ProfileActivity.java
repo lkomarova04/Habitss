@@ -1,4 +1,4 @@
-package com.example.habitss;
+package com.example.habitss.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.habitss.activity.MainActivity;
+import com.example.habitss.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -31,7 +31,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.example.habitss.activity.MainActivity;
 
 import java.io.IOException;
 
@@ -66,6 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
         selectImageBtn = findViewById(R.id.selectImageBtn);
         captureImageBtn = findViewById(R.id.captureImageBtn);
         goToMainButton = findViewById(R.id.goToMainButton);  // Новая кнопка
+
 
         storageReference = FirebaseStorage.getInstance().getReference("profile_images");
         databaseReference = FirebaseDatabase.getInstance().getReference("users");

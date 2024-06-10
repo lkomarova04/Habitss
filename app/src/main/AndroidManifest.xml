@@ -2,56 +2,64 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.habitss">
+
     <!-- Указываем, что приложение использует камеру, и она обязательна для его работы -->
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="true" /> <!-- Запрашиваем разрешение на использование камеры -->
+        android:required="true" />
+    <!-- Запрашиваем разрешение на использование камеры -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
+
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Habitss"
+        android:enableOnBackInvokedCallback="true"
         tools:targetApi="31">
+
         <activity
-            android:name=".AboutActivity"
+            android:name=".ArticleDetailActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.ArticlesActivity"
+            android:exported="false" />
+
         <activity
             android:name=".SignupActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Активность для входа, не экспортируется -->
+        </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="false" /> <!-- Главная активность, экспортируется и является доступной для запуска извне -->
+            android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".activity.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.habitss.activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="false" />
+        <activity android:name=".activity.AboutActivity"
+            android:exported="false"/>
+
         <receiver
             android:name=".broadcastReceiver.AlarmBroadcastReceiver"
-            android:exported="false"> <!-- Установите значение в true или false в зависимости от ваших потребностей -->
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
-
-
     </application>
-
 </manifest>

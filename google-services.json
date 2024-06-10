@@ -1,21 +1,22 @@
 {
   "project_info": {
-    "project_number": "830973300628",
-    "project_id": "habit-tracker-login-6f306",
-    "storage_bucket": "habit-tracker-login-6f306.appspot.com"
+    "project_number": "337016966122",
+    "firebase_url": "https://habitss-e6956-default-rtdb.firebaseio.com",
+    "project_id": "habitss-e6956",
+    "storage_bucket": "habitss-e6956.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:830973300628:android:467bafec0394fb8faf4981",
+        "mobilesdk_app_id": "1:337016966122:android:bda7849f225c52fb388093",
         "android_client_info": {
-          "package_name": "edu.mirea.onebeattrue.habittracker"
+          "package_name": "com.example.habitss"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCvB_ADcJPoTgjcZG4hLLlA8ahdXfA2z4U"
+          "current_key": "AIzaSyB98nqQb-js5zMdzettOzV479FJ11bGMko"
         }
       ],
       "services": {

@@ -13,6 +13,7 @@ googleGmsGoogleServices = "4.4.1"
 firebaseDatabase = "21.0.0"
 navigationFragment = "2.6.0"
 navigationUi = "2.6.0"
+kotlin = "1.8.10"
 
 [libraries]
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
@@ -31,4 +32,5 @@ navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 

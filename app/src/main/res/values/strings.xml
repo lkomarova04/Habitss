@@ -7,4 +7,15 @@
     <string name="confirmation">Completed the task!..</string>
     <string name="sureToMarkAsComplete">Привычка выполнена?</string>
     <string name="congrats_you_have_completed_the_task_successfully">Поздравляем!... Привычка успешно выполнена..</string>
+
+    <!-- Strings for menu items -->
+    <string name="action_open_drawer">Открыть меню</string>
+    <string name="action_about_author">Об авторе</string>
+    <string name="action_about_app">О программе</string>
+    <string name="action_instruction">Инструкция</string>
+    <string name="action_profile">Профиль</string>
+
+    <!-- Strings for navigation drawer -->
+    <string name="navigation_drawer_open">Открыть навигационное меню</string>
+    <string name="navigation_drawer_close">Закрыть навигационное меню</string>
 </resources>
